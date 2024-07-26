@@ -60,8 +60,9 @@ The application will look like the screenshot below:
 
 ![SecurityBot](SecurityBot.png)
 
+## You can find information about SharePoint schemas for GRaph Data Connector in the following link:
 
-
+[SharePoint schemas for Graph Data Connector](https://github.com/microsoftgraph/dataconnect-solutions/tree/main/datasetschemas)
 
 
 
