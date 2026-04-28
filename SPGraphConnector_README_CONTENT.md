@@ -1,4 +1,4 @@
-﻿# SPGraphConnector - SharePoint Data Import Tool
+# SPGraphConnector - SharePoint Data Import Tool
 
 ## Overview
 

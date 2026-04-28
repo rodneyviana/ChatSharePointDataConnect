@@ -1,4 +1,4 @@
-﻿# SharePoint Data Connect AI Security Auditor
+# SharePoint Data Connect AI Security Auditor
 
 An AI-powered solution for analyzing SharePoint security, permissions, and site configurations using natural language queries. This project demonstrates how to combine Microsoft Graph Data Connect with AI (Ollama or Azure OpenAI) to create an intelligent security auditing tool.
 
