@@ -368,3 +368,5 @@ artifacts/
 **/.ionide
 bin/
 obj/
+/restore-working-readme.ps1
+/fix-readme-encoding.ps1
