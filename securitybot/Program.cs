@@ -16,14 +16,19 @@ string apiKey = Environment.GetEnvironmentVariable("APIKEY");
 string connectionString = Environment.GetEnvironmentVariable("CONNECTIONSTRING");
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
-if (String.IsNullOrWhiteSpace(modelId) || String.IsNullOrWhiteSpace(apiKey) || String.IsNullOrWhiteSpace(endpoint) || String.IsNullOrWhiteSpace(connectionString))
+if (String.IsNullOrWhiteSpace(modelId) || String.IsNullOrWhiteSpace(endpoint) || String.IsNullOrWhiteSpace(connectionString))
 {
-    Console.WriteLine("Please set the MODELID, ENDPOINT, CONNECTIONSTRING and APIKEY environment variables.");
+    Console.WriteLine("Please set the MODELID, ENDPOINT, and CONNECTIONSTRING environment variables.");
     return;
 }
 
-// Create a kernel with Azure OpenAI chat completion
-var builder = Kernel.CreateBuilder().AddAzureOpenAIChatCompletion(modelId, endpoint, apiKey);
+// Create a kernel with OpenAI-compatible endpoint for Ollama
+// Ollama's OpenAI-compatible endpoint is at http://localhost:11434/v1
+var builder = Kernel.CreateBuilder().AddOpenAIChatCompletion(
+    modelId: modelId,
+    apiKey: apiKey, // Ollama doesn't require an API key, but provide a dummy value
+    endpoint: new Uri(endpoint) // Should be http://localhost:11434/v1
+);
 
 // Add enterprise components
 builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Warning));
@@ -39,7 +44,7 @@ kernel.Plugins.AddFromType<SqlQueryPlugin>("SqlQuery");
 // Enable planning
 OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new()
 {
-    ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+    FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
 };
 
 // Create a history to store the conversation
