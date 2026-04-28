@@ -1,4 +1,4 @@
-# SecurityBot - AI-Powered SharePoint Security Auditor
+﻿# SecurityBot - AI-Powered SharePoint Security Auditor
 
 ## Overview
 
