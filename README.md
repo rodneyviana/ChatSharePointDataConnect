@@ -101,28 +101,28 @@ This solution consists of two .NET 8 projects that work together:
 
 ```
 SPGraphConnector/
-??? SPGraphConnector/              # Project 1: Data Import Tool
-?   ??? Program.cs                 # Main import logic
-?   ??? SharePointSitesImporter.cs
-?   ??? SharePointGroupsImporter.cs
-?   ??? SharePointPermissionsImporter.cs
-?   ??? CreateDatabase.sql         # Database schema
-?   ??? BasicDataSet_v0.SharePointSites_v1.txt        # Sample data
-?   ??? BasicDataSet_v0.SharePointGroups_v1.txt       # Sample data
-?   ??? BasicDataSet_v0.SharePointPermissions_v1.txt  # Sample data
-?
-??? securitybot/                   # Project 2: AI Chatbot
-?   ??? Program.cs                 # Chat loop and AI integration
-?   ??? SqlQueryPlugin.cs          # Function calling plugin
-?   ??? tablesdefinition.txt       # AI system instructions
-?   ??? .env.example               # Configuration template
-?   ??? OLLAMA_FUNCTION_CALLING.md # Ollama setup guide
-?   ??? README.md                  # Detailed project docs
-?
-??? SPGraphConnector.bak           # SQL Server backup (4.74 MB)
-??? SPGraphConnector-2024-7-29-17-10.bacpac  # Azure SQL backup (0.05 MB)
-??? SecurityBot.png                # Screenshot
-??? README.md                      # This file
+|-- SPGraphConnector/              # Project 1: Data Import Tool
+|   |-- Program.cs                 # Main import logic
+|   |-- SharePointSitesImporter.cs
+|   |-- SharePointGroupsImporter.cs
+|   |-- SharePointPermissionsImporter.cs
+|   |-- CreateDatabase.sql         # Database schema
+|   |-- BasicDataSet_v0.SharePointSites_v1.txt        # Sample data
+|   |-- BasicDataSet_v0.SharePointGroups_v1.txt       # Sample data
+|   +-- BasicDataSet_v0.SharePointPermissions_v1.txt  # Sample data
+|
+|-- securitybot/                   # Project 2: AI Chatbot
+|   |-- Program.cs                 # Chat loop and AI integration
+|   |-- SqlQueryPlugin.cs          # Function calling plugin
+|   |-- tablesdefinition.txt       # AI system instructions
+|   |-- .env.example               # Configuration template
+|   |-- OLLAMA_FUNCTION_CALLING.md # Ollama setup guide
+|   +-- README.md                  # Detailed project docs
+|
+|-- SPGraphConnector.bak           # SQL Server backup (4.74 MB)
+|-- SPGraphConnector-2024-7-29-17-10.bacpac  # Azure SQL backup (0.05 MB)
+|-- SecurityBot.png                # Screenshot
++-- README.md                      # This file
 ```
 
 ## Project 1: SPGraphConnector
